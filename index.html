@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Huelga de la Educación Pública Valenciana</title>
+  <style>
+    :root {
+      --bg: #eefaf0;
+      --card: #ffffff;
+      --text: #1b1b1b;
+      --muted: #55605a;
+      --darkgreen: #0d573c;
+      --green: #007a3d;
+      --green-soft: #d9f3e1;
+      --green-strong: #005b2a;
+      --border: #e4ebe6;
+      --shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg) 0%, #ffffff 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+
+    header {
+      margin-bottom: 32px;
+      padding: 28px 24px;
+      border-radius: 24px;
+      background: linear-gradient(90deg, var(--green-soft) 0%, var(--card) 60%);
+      border: 1px solid rgba(0, 122, 61, 0.08);
+      box-shadow: var(--shadow);
+    }
+
+    header h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 3vw, 3rem);
+      letter-spacing: -0.03em;
+      color: var(--green-strong);
+    }
+
+    .lang-actions {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    button.lang {
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--text);
+      padding: 12px 18px;
+      cursor: pointer;
+      transition: 0.18s ease;
+      font-weight: 600;
+      font-size: 1.6rem;
+      line-height: 1;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+    }
+
+    button.lang:hover {
+      border-color: var(--green);
+      background: var(--green-soft);
+      color: var(--green-strong);
+    }
+
+    button.lang.active {
+      border-color: var(--green-strong);
+      background: var(--green);
+      color: #ffffff;
+      box-shadow: 0 10px 30px rgba(0, 122, 61, 0.12);
+    }
+
+    section.card {
+      margin-bottom: 20px;
+      padding: 26px 26px;
+      border-radius: 24px;
+      background: var(--card);
+      border: 1px solid rgba(0, 122, 61, 0.06);
+      box-shadow: var(--shadow);
+      border-left: 6px solid rgba(0, 122, 61, 0.06);
+    }
+
+    section.card h2 {
+      margin: 0 0 14px;
+      color: var(--green);
+      font-size: 1.35rem;
+    }
+
+    section.card p {
+      margin: 0 0 14px;
+    }
+
+    .highlight {
+      color: var(--green-strong);
+      font-weight: 700;
+      background: var(--green-soft);
+      padding: 6px 10px;
+      border-radius: 8px;
+      display: inline-block;
+    }
+
+    .tip {
+      padding: 18px;
+      margin-top: 12px;
+      border-left: 4px solid var(--green);
+      background: #f1fbf4;
+      color: #1f3d2d;
+      border-radius: 12px;
+    }
+
+    .sources {
+      margin-top: 18px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .sources strong {
+      color: var(--text);
+    }
+
+    .sources a {
+      color: var(--green-strong);
+      text-decoration: underline;
+      font-weight: 700;
+    }
+
+    b {
+      color: var(--darkgreen);
+    }
+
+    a {
+      color: var(--green);
+    }
+
+    .sources a:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      margin-top: 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 620px) {
+
+      header,
+      section.card {
+        padding: 22px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <header>
+      <div>
+        <span class="highlight">Info rápida</span>
+        <h1 id="title">¿Qué está pasando en la educación pública valenciana?</h1>
+        <p id="subtitle">Una guía breve y clara para turistas que quieren entender la huelga y la protesta.</p>
+      </div>
+
+      <div class="lang-actions">
+        <button class="lang" data-lang="en" aria-label="English" title="English">🇬🇧</button>
+        <button class="lang" data-lang="fr" aria-label="Français" title="Français">🇫🇷</button>
+        <button class="lang" data-lang="it" aria-label="Italiano" title="Italiano">🇮🇹</button>
+        <button class="lang active" data-lang="es" aria-label="Español" title="Español">🇪🇸</button>
+        <button class="lang" data-lang="va" aria-label="Valencià" title="Valencià"><img src="./img/Flag_of_the_Valencian_Community_(2x3).svg.png" height="20" alt="Valencià"></button>
+      </div>
+    </header>
+
+    <section class="card">
+      <h2 id="section1-title">¿Qué pasa?</h2>
+      <p id="section1-text">La educación pública valenciana está en tensión porque la Conselleria no invierte suficiente en los colegios e institutos públicos. El profesorado protesta por las condiciones de trabajo, el número de alumnos por aula y el salario real frente a la inflación.</p>
+      <div class="tip" id="section1-tip">La huelga indefinida empezó el 11 de mayo y los docentes siguen en la calle para pedir cambios duraderos.</div>
+    </section>
+
+    <section class="card">
+      <h2 id="section2-title">Motivos de la huelga</h2>
+      <p id="section2-text">Los maestros y profesores reclaman mejoras claras:</p>
+      <ul id="section2-bullet">
+        <li>Reducción de ratios: el número de alumnos por aula es muy elevado, llegando a 35 en Bachillerato</li>
+        <li>Mejora de infraestructuras: hay con goteras, desprendimientos o con temperaturas por encima de los 35º C</li>
+        <li>Sueldos más justos: los salarios no se suben desde 2008</li>
+        <li>Aumento de plantillas docentes para poder atender mejor a la creciente diversidad</li>
+        <li>Reducción de la burocracia</li>
+        <li>Respeto a la lengua valenciana</li>
+      </ul>
+      <p id="section2-text2">Los sindicatos también denuncian que la falta de inversión y las condiciones laborales precarias afectan especialmente a los centros con más alumnado vulnerable, aumentando las desigualdades educativas.</p>
+    </section>
+
+    <section class="card">
+      <h2 id="section3-title">Por qué no negocia la Conselleria</h2>
+      <p id="section3-text">Según las noticias, la Conselleria de Educación todavía no ha abierto una negociación real con todos los sindicatos. STEPV, CCOO y UGT han entrado en la Conselleria para exigir una reunión oficial y dicen que la Administración no responde con la urgencia que pide el profesorado.</p>
+      <div class="tip" id="section3-tip">La falta de diálogo ha extendido la huelga. Los docentes aseguran que quieren resolver el conflicto, pero necesitan una mesa de negociación clara y compromisos firmes.</div>
+    </section>
+
+    <section class="card">
+      <h2 id="section4-title">¿Qué debe saber un turista?</h2>
+      <p id="section4-text">Si ves protestas, pancartas verdes o concentraciones, recuerda que es una acción ciudadana por la educación pública. No es una protesta contra Valencia como destino turístico, sino una demanda social para cuidar las escuelas y el futuro de los niños.</p>
+      <p class="sources"><strong>Fuente:</strong> ElDiario.es y Levante-EMV, noticias de mayo y junio de 2026 sobre la huelga del profesorado en la Comunitat Valenciana.</p>
+    </section>
+
+    <div class="footer">Hecho para hacer fácil un tema complejo. Cambia de idioma para comparar.</div>
+  </main>
+
+  <script>
+    const translations = {
+      es: {
+        title: "¿Qué está pasando en la educación pública valenciana?",
+        subtitle: "Una guía breve y clara para turistas que quieren entender la huelga y la protesta.",
+        section1Title: "¿Qué pasa?",
+        section1Text: "La educación pública valenciana está en tensión porque la Conselleria no invierte suficiente en los colegios e institutos públicos. El profesorado protesta por las condiciones de trabajo, el número de alumnos por aula y el salario real frente a la inflación.",
+        section1Tip: "La huelga indefinida empezó el 11 de mayo y los docentes siguen en la calle para pedir cambios duraderos.",
+        section2Title: "Motivos de la huelga",
+        section2Text: "Los maestros y profesores reclaman mejoras claras:",
+        section2Bullet: "<li><b>Reducción de ratios:</b> el número de alumnos por aula es muy elevado, llegando a 35 en Bachillerato</li><li><b>Mejora de infraestructuras:</b> hay aulas con goteras, desprendimientos o con temperaturas por encima de los 35º C <a href='https://cadpv.org/mur-vergonya' target='_blank' rel='noopener'>(Mira que vergüenza)</a></li><li><b>Sueldos más justos:</b> los salarios no se suben desde 2008</li><li><b>Aumento de plantillas docentes:</b> para poder atender mejor a la creciente diversidad</li><li><b>Reducción de la burocracia:</b> para facilitar el trabajo en el aula</li><li><b>Respeto a la lengua valenciana:</b> para preservar y promover la cultura local</li> ",
+        section2Text2: "Los sindicatos también denuncian que la falta de inversión y las condiciones laborales precarias afectan especialmente a los centros con más alumnado vulnerable, aumentando las desigualdades educativas.",
+        section3Title: "Por qué no negocia la Conselleria",
+        section3Text: "La Conselleria de Educación está utilizando una estrategia de desgaste, con propuestas poco concretas y muy lejos de las reivindicaciones, y todavía no ha abierto una negociación real con los sindicatos. Los sindicatos mayoritatios (STEPV, CCOO y UGT) exigen un calendario realista de negociaciones con propuestas claras y dicen que la Administración no responde con la urgencia que pide el profesorado.",
+        section3Tip: "La falta de diálogo ha extendido la huelga. Los docentes queremos resolver el conflicto, pero necesitamos una mesa de negociación clara y compromisos firmes.",
+        section4Title: "¿Qué debe saber un turista?",
+        section4Text: "Si ves protestas, pancartas verdes o concentraciones, recuerda que es una acción ciudadana por la educación pública. No es una protesta contra Valencia como destino turístico, sino una demanda social para cuidar las escuelas y el futuro de los niños.",
+        sources: "Fuente: <a href=\"https://www.eldiario.es/comunitat-valenciana/docentes-valencianos-amenazan-retomar-movilizaciones-septiembre-si-educacion-no-reabre-negociacion-salarios-valenciano_1_13275030.html\" target=\"_blank\" rel=\"noopener\">ElDiario.es</a> y <a href=\"https://www.levante-emv.com/comunitat-valenciana/2026/05/29/tres-sindicatos-irrumpen-conselleria-exigen-130795270.html\" target=\"_blank\" rel=\"noopener\">Levante-EMV</a>, noticias de mayo y junio de 2026 sobre la huelga del profesorado en la Comunitat Valenciana.",
+        footer: "Hecho para hacer fácil un tema complejo. Cambia de idioma para comparar."
+      },
+      va: {
+        title: "Què passa en l'educació pública valenciana?",
+        subtitle: "Una guia breu i clara per a turistes que volen entendre la vaga i la protesta.",
+        section1Title: "Què passa?",
+        section1Text: "L'educació pública valenciana està en tensió perquè la Conselleria no inverteix prou en col·legis i instituts públics. El professorat protesta per les condicions de treball, el nombre d'alumnes a cada aula i el sou real front a la inflació.",
+        section1Tip: "La vaga indefinida va començar l'11 de maig i els docents continuen al carrer per demanar canvis duradors.",
+        section2Title: "Motivos de la vaga",
+        section2Text: "Els mestres i professors reclamen millores clares:",
+        section2Bullet: "<li><b>Reducció de ràtios:</b> el nombre d'alumnes per aula és molt elevat, arribant a 35 en Batxillerat</li><li><b>Millora d'infraestructures:</b> hi ha aules amb goteres, despreniments o temperatures per sobre dels 35 ºC <a href='https://cadpv.org/mur-vergonya' target='_blank' rel='noopener'>(Mira que vergonya)</a></li><li><b>Sous més justos:</b> els salaris no pugen des de 2008</li><li><b>Augment de plantilles docents:</b> per poder atendre millor la creixent diversitat</li><li><b>Reducció de la burocràcia:</b> per facilitar el treball en l'aula</li><li><b>Respecte a la llengua valenciana:</b> per preservar i promover la cultura local</li> <br> ",
+        section2Text2: "Els sindicats també denuncien que la falta d'inversió i les condicions laborals precàries afecten especialment els centres amb més alumnat vulnerable, augmentant les desigualtats educatives.",
+        section3Title: "Per què no negocia la Conselleria",
+        section3Text: "Segons les notícies, la Conselleria d'Educació encara no ha obert una negociació real amb tots els sindicats. STEPV, CCOO i UGT han entrat a la Conselleria per exigir una reunió oficial i diuen que l'Administració no respon amb l'urgència que demana el professorat.",
+        section3Tip: "La falta de diàleg ha allargat la vaga. Els docents asseguren que volen resoldre el conflicte, però necessiten una taula de negociació clara i compromisos ferms.",
+        section4Title: "Què ha de saber un turista?",
+        section4Text: "Si veus protestes, pancartes verdes o concentracions, recorda que és una acció ciutadana per l'educació pública. No és una protesta contra València com a destinació turística, sinó una demanda social per cuidar les escoles i el futur dels infants.",
+        sources: "Font: <a href=\"https://www.eldiario.es/comunitat-valenciana/docentes-valencianos-amenazan-retomar-movilizaciones-septiembre-si-educacion-no-reabre-negociacion-salarios-valenciano_1_13275030.html\" target=\"_blank\" rel=\"noopener\">ElDiario.es</a> i <a href=\"https://www.levante-emv.com/comunitat-valenciana/2026/05/29/tres-sindicatos-irrumpen-conselleria-exigen-130795270.html\" target=\"_blank\" rel=\"noopener\">Levante-EMV</a>, notícies de maig i juny de 2026 sobre la vaga del professorat a la Comunitat Valenciana.",
+        footer: "Fet per fer fàcil un tema complex. Canvia d'idioma per comparar."
+      },
+      en: {
+        title: "What is happening with Valencian public education?",
+        subtitle: "A short and clear guide for tourists who want to understand the strike and protest.",
+        section1Title: "What is happening?",
+        section1Text: "Valencian public education is under pressure because  Conselleria (autonomic government) is not investing enough in public schools and highschools. Staff are protesting working conditions, class size, and salaries that lag behind inflation.",
+        section1Tip: "The indefinite strike began on May 11 and teachers remain on the streets asking for lasting change.",
+        section2Title: "Why they are on strike",
+        section2Text: "Teachers ask for clear improvements:",
+        section2Bullet: "<li><b>Class size reduction:</b> the number of students per classroom is very high, reaching 35 in Baccalaureate</li><li><b>Infrastructure improvement:</b> there are classrooms withleaks, cracks or temperatures above 35º C <a href='https://cadpv.org/mur-vergonya' target='_blank' rel='noopener'>(Look what a shame)</a></li><li><b>Fairer pay:</b> salaries have not increased since 2008</li><li><b>More teaching staff:</b> to better support growing diversity</li><li><b>Less bureaucracy:</b> to facilitate work in the classroom</li><li><b>Respect for the Valencian language:</b> to preserve and promote the local culture</li> ",
+        section2Text2: "Unions also denounce that the lack of investment and precarious working conditions especially affect schools with more vulnerable students, increasing educational inequalities.",
+        section3Title: "Why the Conselleria is not negotiating",
+        section3Text: "According to news reports, the Education Department still has not opened a full negotiation with all unions. STEPV, CCOO and UGT entered the Conselleria to demand an official meeting and say the administration is not responding urgently.",
+        section3Tip: "The lack of dialogue has made the strike last longer. Teachers say they want to solve the conflict, but need a clear negotiation table and firm commitments.",
+        section4Title: "What tourists should know",
+        section4Text: "If you see protests, green banners or gatherings, remember this is a citizen action for public education. It is not a protest against Valencia as a tourist destination, but a social demand to protect schools and the future of children.",
+        sources: "Source: <a href=\"https://www.eldiario.es/comunitat-valenciana/docentes-valencianos-amenazan-retomar-movilizaciones-septiembre-si-educacion-no-reabre-negociacion-salarios-valenciano_1_13275030.html\" target=\"_blank\" rel=\"noopener\">ElDiario.es</a> and <a href=\"https://www.levante-emv.com/comunitat-valenciana/2026/05/29/tres-sindicatos-irrumpen-conselleria-exigen-130795270.html\" target=\"_blank\" rel=\"noopener\">Levante-EMV</a>, May and June 2026 news about the teachers' strike in the Valencian Community.",
+        footer: "Made to make a complex topic easy. Change language to compare."
+      }
+      ,
+      it: {
+        title: "Cosa sta succedendo nell'istruzione pubblica valenciana?",
+        subtitle: "Una guida breve e chiara per i turisti che vogliono capire lo sciopero e le proteste.",
+        section1Title: "Cosa sta succedendo?",
+        section1Text: "L'istruzione pubblica valenciana è sotto pressione perché la Conselleria non investe abbastanza nelle scuole e nei licei pubblici. Il personale protesta per le condizioni di lavoro, il numero di studenti per classe e salari che restano indietro rispetto all'inflazione.",
+        section1Tip: "Lo sciopero a tempo indeterminato è iniziato l'11 maggio e gli insegnanti sono in piazza chiedendo cambiamenti duraturi.",
+        section2Title: "Perché scioperano",
+        section2Text: "Gli insegnanti chiedono miglioramenti chiari:",
+        section2Bullet: "<li><b>Riduzione del numero di alunni:</b> il numero di studenti per classe è molto alto, arrivando a 35 nel Baccalaureato</li><li><b>Miglioramento delle infrastrutture:</b> ci sono aule con infiltrazioni, distacchi o temperature oltre i 35º C <a href='https://cadpv.org/mur-vergonya' target='_blank' rel='noopener'>(Guarda che vergogna)</a></li><li><b>Retribuzioni più eque:</b> i salari non aumentano dal 2008</li><li><b>Più personale docente:</b> per supportare meglio la crescente diversità</li><li><b>Meno burocrazia:</b> per facilitare il lavoro in aula</li><li><b>Rispetto per la lingua valenciana:</b> per preservare e promuovere la cultura locale</li>",
+        section2Text2: "I sindacati denunciano anche che la mancanza di investimenti e le condizioni di lavoro precarie colpiscono specialmente le scuole con studenti più vulnerabili, aumentando le disuguaglianze educative.",
+        section3Title: "Perché la Conselleria non negozia",
+        section3Text: "Secondo le notizie, il Dipartimento dell'Educazione non ha ancora avviato una negoziazione completa con tutti i sindacati. STEPV, CCOO e UGT sono entrati nella Conselleria per chiedere un incontro ufficiale e dicono che l'amministrazione non risponde con urgenza.",
+        section3Tip: "La mancanza di dialogo ha prolungato lo sciopero. Gli insegnanti dicono che vogliono risolvere il conflitto, ma hanno bisogno di un tavolo di negoziazione chiaro e impegni concreti.",
+        section4Title: "Cosa dovrebbe sapere un turista",
+        section4Text: "Se vedi proteste, striscioni verdi o raduni, ricorda che è un'azione civica per l'istruzione pubblica. Non è una protesta contro Valencia come destinazione turistica, ma una richiesta sociale per proteggere le scuole e il futuro dei bambini.",
+        sources: "Fonte: <a href=\"https://www.eldiario.es/comunitat-valenciana/docentes-valencianos-amenazan-retomar-movilizaciones-septiembre-si-educacion-no-reabre-negociacion-salarios-valenciano_1_13275030.html\" target=\"_blank\" rel=\"noopener\">ElDiario.es</a> e <a href=\"https://www.levante-emv.com/comunitat-valenciana/2026/05/29/tres-sindicatos-irrumpen-conselleria-exigen-130795270.html\" target=\"_blank\" rel=\"noopener\">Levante-EMV</a>.",
+        footer: "Creato per rendere semplice un argomento complesso. Cambia lingua per confrontare."
+      },
+      fr: {
+        title: "Que se passe-t-il dans l'enseignement public valencien ?",
+        subtitle: "Un guide court et clair pour les touristes qui veulent comprendre la grève et la protestation.",
+        section1Title: "Que se passe-t-il ?",
+        section1Text: "L'enseignement public valencien est sous pression car la Conselleria n'investit pas suffisamment dans les écoles et lycées publics. Le personnel proteste contre les conditions de travail, la taille des classes et des salaires qui restent en deçà de l'inflation.",
+        section1Tip: "La grève illimitée a commencé le 11 mai et les enseignant·e·s sont dans la rue pour demander des changements durables.",
+        section2Title: "Pourquoi ils font grève",
+        section2Text: "Les enseignant·e·s demandent des améliorations claires :",
+        section2Bullet: "<li><b>Réduction de la taille des classes :</b> le nombre d'élèves par classe est très élevé, atteignant 35 en baccalauréat</li><li><b>Amélioration des infrastructures :</b> il y a des salles avec des fuites, des décollements ou des températures supérieures à 35º C <a href='https://cadpv.org/mur-vergonya' target='_blank' rel='noopener'>(Regardez quelle honte)</a></li><li><b>Salaires plus équitables :</b> les salaires n'augmentent pas depuis 2008</li><li><b>Plus de personnel enseignant :</b> pour mieux accompagner la diversité croissante</li><li><b>Moins de bureaucratie :</b> pour faciliter le travail en classe</li><li><b>Respect de la langue valencienne :</b> pour préserver et promouvoir la culture locale</li>",
+        section2Text2: "Les syndicats dénoncent également que le manque d'investissements et les conditions de travail précaires affectent particulièrement les établissements avec des élèves plus vulnérables, augmentant les inégalités éducatives.",
+        section3Title: "Pourquoi la Conselleria ne négocie pas",
+        section3Text: "Selon les articles, le Département de l'Éducation n'a pas encore ouvert une négociation complète avec tous les syndicats. STEPV, CCOO et UGT sont entrés dans la Conselleria pour demander une réunion officielle et disent que l'administration ne répond pas avec l'urgence requise.",
+        section3Tip: "L'absence de dialogue a prolongé la grève. Les enseignant·e·s disent qu'ils veulent résoudre le conflit, mais ont besoin d'une table de négociation claire et d'engagements fermes.",
+        section4Title: "Ce que les touristes doivent savoir",
+        section4Text: "Si vous voyez des manifestations, des banderoles vertes ou des rassemblements, sachez qu'il s'agit d'une action citoyenne pour l'enseignement public. Ce n'est pas une protestation contre Valence comme destination touristique, mais une demande sociale pour protéger les écoles et l'avenir des enfants.",
+        sources: "Source : <a href=\"https://www.eldiario.es/comunitat-valenciana/docentes-valencianos-amenazan-retomar-movilizaciones-septiembre-si-educacion-no-reabre-negociacion-salarios-valenciano_1_13275030.html\" target=\"_blank\" rel=\"noopener\">ElDiario.es</a> et <a href=\"https://www.levante-emv.com/comunitat-valenciana/2026/05/29/tres-sindicatos-irrumpen-conselleria-exigen-130795270.html\" target=\"_blank\" rel=\"noopener\">Levante-EMV</a>.",
+        footer: "Fait pour rendre un sujet complexe simple. Changez de langue pour comparer."
+      }
+    };
+
+    const buttons = document.querySelectorAll('button.lang');
+    const elements = {
+      title: document.getElementById('title'),
+      subtitle: document.getElementById('subtitle'),
+      section1Title: document.getElementById('section1-title'),
+      section1Text: document.getElementById('section1-text'),
+      section1Tip: document.getElementById('section1-tip'),
+      section2Title: document.getElementById('section2-title'),
+      section2Text: document.getElementById('section2-text'),
+      section2Bullet: document.getElementById('section2-bullet'),
+      section2Text2: document.getElementById('section2-text2'),
+      section3Title: document.getElementById('section3-title'),
+      section3Text: document.getElementById('section3-text'),
+      section3Tip: document.getElementById('section3-tip'),
+      section4Title: document.getElementById('section4-title'),
+      section4Text: document.getElementById('section4-text'),
+      sources: document.querySelector('.sources'),
+      footer: document.querySelector('.footer')
+    };
+
+    function setLanguage(lang) {
+      const t = translations[lang];
+      document.documentElement.lang = lang === 'va' ? 'ca' : lang;
+      elements.title.textContent = t.title;
+      elements.subtitle.textContent = t.subtitle;
+      elements.section1Title.textContent = t.section1Title;
+      elements.section1Text.textContent = t.section1Text;
+      elements.section1Tip.textContent = t.section1Tip;
+      elements.section2Title.textContent = t.section2Title;
+      elements.section2Text.textContent = t.section2Text;
+      elements.section2Bullet.innerHTML = t.section2Bullet;
+      elements.section2Text2.textContent = t.section2Text2;
+      elements.section3Title.textContent = t.section3Title;
+      elements.section3Text.textContent = t.section3Text;
+      elements.section3Tip.textContent = t.section3Tip;
+      elements.section4Title.textContent = t.section4Title;
+      elements.section4Text.textContent = t.section4Text;
+      const sourceLabels = { en: 'Source:', va: 'Font:', es: 'Fuente:', it: 'Fonte:', fr: 'Source:' };
+      const srcLabel = sourceLabels[lang] || 'Fuente:';
+      elements.sources.innerHTML = `<strong>${srcLabel}</strong> ${t.sources}`;
+      elements.footer.textContent = t.footer;
+      buttons.forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
+    }
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => setLanguage(button.dataset.lang));
+    });
+
+    // Inicializa el idioma por defecto en inglés con enlaces visibles.
+    setLanguage('en');
+  </script>
+</body>
+</html>
